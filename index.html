@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text"></h1>
+        <div class="linear">
+            <span></span>
+        </div class="buttons">
+        <button class="minus">-10</button>
+        <button class="minus1">-1</button>
+        <button class="plus">+10</button>
+        <button class="plus1">+1</button>
+        <button class="reset">reset</button>
+    </div>
+</div>
+
+
+<script>
+    const elText = document.querySelector(".text")
+    const elPlus = document.querySelector(".plus")
+    const elMinus = document.querySelector(".minus")
+    const elSpan = document.querySelector("span")
+    const elPlus1 = document.querySelector(".plus1")
+    const elMinus1 = document.querySelector(".minus1")
+    const elReset = document.querySelector(".reset")
+    
+    let counter = 0
+    
+    elText.innerHTML = counter
+    
+    elPlus.onclick = () => {
+        counter += 10
+        elText.innerHTML = counter
+        elSpan.style.width = `${Math.abs(counter)}%`
+        if (counter > 0) {
+            elSpan.style.backgroundColor = "green"
+            elText.style.color = "green"    
+        }
+    }
+    
+    
+    elMinus.onclick = () => {
+        counter -= 10
+        elText.innerHTML = counter
+        elSpan.style.width =  `${Math.abs(counter)}%`
+        if (counter < 0) {
+            elSpan.style.backgroundColor = "red"
+            elText.style.color = "red"
+        }
+    }
+    
+    elPlus1.onclick = () => {
+        counter += 1
+        elText.innerHTML = counter
+        elSpan.style.width = `${Math.abs(counter)}%`
+        if (counter > 0) {
+            elSpan.style.backgroundColor = "green"
+            elText.style.color = "green"
+        }
+    }
+    
+    elMinus1.onclick = () => {
+        counter -= 1
+        elText.innerHTML = counter
+        elSpan.style.width = `${Math.abs(counter)}%`
+        if (counter < 0) {
+            elSpan.style.backgroundColor = "red"
+            elText.style.color = "red"
+        }
+    }
+
+     elReset.onclick = () => {
+        counter = 0
+        elText.innerHTML = counter
+        elSpan.style.width = `${Math.abs(counter)}%`
+        if (counter = 0) {
+            elSpan.style.backgroundColor = "red"
+            elText.style.color = "red"
+        }
+    }
+</script>
+</body>
+
+</html>
